@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+    background: #333;
+    color: #fff;
+    font-family: AktivGroteskStd, sans-serif;
+}
+
+#content {
+    width: 100%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section {
+    padding: 30px;
+    box-sizing: border-box;
+    background: #222;
+    border: 1px solid #aaa;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: justify;
+}
+
+#header {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    text-align: right;
+    font-size: 30px;
+    font-weight: 100;
+}
+
+.section_header {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.subscript {
+    font-size: 12px;
+}
+
+.coding_area {
+    width: 100%;
+}
+
+.CodeMirror {
+    border: 1px solid #555;
+}
+
+.run_program {
+    cursor: pointer;
+    color: #0a0;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #0a0;
+    margin-bottom: 5px;
+    margin-left: auto;
+    display: block;
+    width: 50px;
+}
+
+@media print {
+    body {
+        background: #fff;
+        color: #000;
+    }
+
+    .header {
+        margin-top: 0;
+    }
+
+    .section {
+        border: 1px solid #000;
+    }
+
+    .interactive {
+        display: none;
+    }
+}
