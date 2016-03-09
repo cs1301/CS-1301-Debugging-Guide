@@ -1,8 +1,12 @@
 body {
     margin: 0;
     background: #333;
-    color: #fff;
+    color: #ccc;
     font-family: AktivGroteskStd, sans-serif;
+}
+
+a {
+    color: #aaa;
 }
 
 #content {
@@ -37,6 +41,12 @@ body {
 
 .subscript {
     font-size: 12px;
+}
+
+.emphasis {
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: 800;
 }
 
 .coding_area {
