@@ -1,7 +1,7 @@
-var code_input_instances = [];
-var code_output_instances = [];
-
 window.onload = function() {
+    var code_input_instances = [];
+    var code_output_instances = [];
+
     var coding_areas = document.getElementsByClassName("coding_area");
     for (var i = 0; i < coding_areas.length; i++) {
         code_input_instances[i] = CodeMirror.fromTextArea(coding_areas[i], {
@@ -12,6 +12,7 @@ window.onload = function() {
             scrollbarStyle: null
         });
         code_input_instances[i].setOption("theme", "lesser-dark");
+        update_program(i, code_input_instances, "problem");
     }
 
     var output_areas = document.getElementsByClassName("output_area");
@@ -28,13 +29,27 @@ window.onload = function() {
         code_output_instances[i].setSize(-1, 100);
     }
 
-    code_input_instances[0].setValue("def test_program():\n\tprint(\"yay!\")");
-
     var run_buttons = document.getElementsByClassName("run_program");
     for (i = 0; i < run_buttons.length; i++) {
         run_buttons[i].addEventListener("click", function(e) {
             var index = parseInt(e.target.getAttribute("program"));
             execute_program(code_input_instances[index], code_output_instances[index]);
+        });
+    }
+
+    var reset_buttons = document.getElementsByClassName("reset_program");
+    for (i = 0; i < reset_buttons.length; i++) {
+        reset_buttons[i].addEventListener("click", function(e) {
+            var index = parseInt(e.target.getAttribute("program"));
+            update_program(index, code_input_instances, "problem");
+        });
+    }
+
+    var solution_buttons = document.getElementsByClassName("reveal_solution");
+    for (i = 0; i < solution_buttons.length; i++) {
+        solution_buttons[i].addEventListener("click", function(e) {
+            var index = parseInt(e.target.getAttribute("program"));
+            update_program(index, code_input_instances, "solution");
         });
     }
 };
@@ -54,4 +69,15 @@ function execute_program(input, output) {
         function(err) {
             output.setValue(output.getValue() + err.toString());
         });
+}
+
+function update_program(index, code_input_instances, type) {
+    var req = new XMLHttpRequest();
+    req.onreadystatechange = function() {
+        if (req.readyState == 4 && req.status == 200) {
+            code_input_instances[index].setValue(req.responseText);
+        }
+    };
+    req.open("GET", "python_files/" + index + "_" + type + ".py", true);
+    req.send();
 }

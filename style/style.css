@@ -37,6 +37,7 @@ a {
 .section_header {
     font-size: 25px;
     margin-bottom: 20px;
+    color: #669199;
 }
 
 .subscript {
@@ -57,16 +58,25 @@ a {
     border: 1px solid #555;
 }
 
-.run_program {
-    cursor: pointer;
-    color: #0a0;
+.coding_buttons {
+    text-align: right;
+}
+
+.coding_button {
+    display: inline-block;
+    color: #669199;
+    border: 1px solid #669199;
+    padding: 5px 15px;
     text-align: center;
-    padding: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.run_program {
+    color: #0a0;
     border: 1px solid #0a0;
     margin-bottom: 5px;
     margin-left: auto;
-    display: block;
-    width: 50px;
 }
 
 @media print {

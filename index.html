@@ -22,71 +22,107 @@
         </div>
         <div class="section">
             <div class="section_header">What is debugging?</div>
-            <p>If you’ve ever written a program that works, there’s a pretty good chance that you’ve debugged a program
+            <p>
+                If you’ve ever written a program that works, there’s a pretty good chance that you’ve debugged a program
                 before. Debugging is an integral part of the creation of every nontrivial program even for developers
                 who have been writing code for many years. If you read
                 <a href="http://openbookproject.net/thinkcs/python/english3e/way_of_the_program.html">Chapter 1</a>
-                of How to Think Like a Computer Scientist, you will recall that there are three types of errors:</p>
+                of How to Think Like a Computer Scientist, you will recall that there are three types of errors:
+            </p>
             <ol>
                 <li>syntax errors</li>
                 <li>runtime errors</li>
                 <li>semantic errors</li>
             </ol>
-            <p>If you don’t remember exactly what these mean, don’t worry; we’ll get more into that later. The idea to
+            <p>
+                If you don’t remember exactly what these mean, don’t worry; we’ll get more into that later. The idea to
                 take away here is that, in the simplest sense, debugging is the process by which a programmer finds
                 these errors and fixes them. There is no “correct” way to do this, but there are definitely some
                 approaches that will be a lot more effective than others. This document is here to help you spend as
-                little time debugging as possible so that you can spend more time writing code!</p>
+                little time debugging as possible so that you can spend more time writing code!
+            </p>
         </div>
         <div class="section">
             <div class="section_header">My program raised an exception. What do I do?</div>
-            <p>When your program raises an exception that you did not expect, it means you have either a syntax error
+            <p>
+                When your program raises an exception that you did not expect, it means you have either a syntax error
                 or a runtime error. Don’t freak out! The great thing about these two types of errors is that the
                 computer can usually tell you what’s wrong. Note that it can’t tell you how to fix it – that’s for
                 you to figure out. You can never fix an error that you don’t understand (not easily, that is), which
-                leads us to the most important step for fixing this situation:</p>
+                leads us to the most important step for fixing this situation:
+            </p>
             <div class="emphasis">Read the error message</div>
-            <p>Just seeing that there is red text is not enough. You need to look at what the red text says! There’s
+            <p>
+                Just seeing that there is red text is not enough. You need to look at what the red text says! There’s
                 always some helpful information in there if you know how to find it. For one, the error message should
                 be able to tell you what line the problem occurred. Keep in mind that sometimes you can encounter an
-                error on one line which was caused on another line (this is especially possible for syntax errors).
+                error on one line which was caused on another line (this is especially possible for runtime errors).
                 This means you may want to investigate the surrounding lines as well. In any case, having the line
-                number can really narrow down your search for the error.</p>
-            <p>Secondly, the error message will be able to tell you what it thinks went wrong. Check out the error
+                number can really narrow down your search for the error.
+            </p>
+            <p>
+                Secondly, the error message will be able to tell you what it thinks went wrong. Check out the error
                 reference to help determine what the error means. Error messages are written by other programmers just
                 like you! They were meant to make sense, and you should definitely try to figure out what they’re
-                trying to say.</p>
+                trying to say.
+            </p>
         </div>
         <div class="section">
             <div class="section_header">
                 My program did not raise an exception, but it doesn’t do what I want it to do.
             </div>
-            <p>This is a semantic error. Semantic errors are not fun to debug, because you don’t have a helpful error
+            <p>
+                This is a semantic error. Semantic errors are not fun to debug, because you don’t have a helpful error
                 message to point you to the issue. You do, however, have an invaluable resource to help you find the
                 problem: you! As the creator of the program, you are more equipped than anyone to figure out why the
                 program isn’t functioning properly. This process definitely takes practice, but there are steps you
-                can take to avoid semantic errors and then rid your program of them when they do occur.</p>
+                can take to avoid semantic errors and then rid your program of them when they do occur.
+            </p>
 
-                <ol>
-                    <li>
-                        Test tiny portions of your program often. You should not begin testing your program after
-                        you finish writing it. Testing should take place with each few lines that you write just to
-                        make sure it’s doing what you expect.
-                    </li>
-                    <li>
-                        Print statements are your friend. While there are many more robust debugging tools out there
-                        that you will likely encounter in the future, you can probably debug every imaginable bug in
-                        CS 1301 through the creative use of print. By printing variables at strategic points throughout
-                        your program, you can usually get a pretty good idea of where the program went wrong.
-                    </li>
-                </ol>
+            <ol>
+                <li>
+                    Test tiny portions of your program often. You should not begin testing your program after
+                    you finish writing it. Testing should take place with each few lines that you write just to
+                    make sure it’s doing what you expect.
+                </li>
+                <li>
+                    Print statements are your friend. While there are many more robust debugging tools out there
+                    that you will likely encounter in the future, you can probably debug every imaginable bug in
+                    CS 1301 through the creative use of print. By printing variables at strategic points throughout
+                    your program, you can usually get a pretty good idea of where the program went wrong.
+                </li>
+            </ol>
         </div>
         <div class="section interactive">
-            <div class="section_header">give it a try</div>
-            Try to debug this broken program.
-            <div class="run_program" program="0">run</div>
+            <div class="section_header">Syntax errors</div>
+            <p>
+                Okay let’s try some debugging now. Syntax errors are definitely the easiest, since there are only a few
+                you’ll regularly encounter, so we’ll start there. Using the reference, try fixing this broken program:
+            </p>
             <textarea class="coding_area"></textarea>
             <textarea class="output_area"></textarea>
+            <div class="coding_buttons">
+                <div class="reveal_solution coding_button" program="0">reveal solution</div>
+                <div class="reset_program coding_button" program="0">reset</div>
+                <div class="run_program coding_button" program="0">run</div>
+            </div>
+            <p>
+                Ok that wasn't that hard! You may have noticed that the error you see here is a little different than
+                what you would see in Calico. That’s because error messages are written by the creators of the compiler
+                – this means they differ from language to language and from environment to environment. It would be
+                impractical to try to memorize all the different types of errors, so it’s good to get into the habit
+                of taking the time to understand them on a case by case basis.
+            </p>
+            <p>
+                Let's try this one:
+            </p>
+            <textarea class="coding_area"></textarea>
+            <textarea class="output_area"></textarea>
+            <div class="coding_buttons">
+                <div class="reveal_solution coding_button" program="1">reveal solution</div>
+                <div class="reset_program coding_button" program="1">reset</div>
+                <div class="run_program coding_button" program="1">run</div>
+            </div>
         </div>
     </div>
 </body>
