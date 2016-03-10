@@ -8,7 +8,6 @@ window.onload = function() {
             lineNumbers: true,
             styleActiveLine: true,
             matchBrackets: true,
-            indentWithTabs: true,
             scrollbarStyle: null
         });
         code_input_instances[i].setOption("theme", "lesser-dark");
@@ -21,7 +20,6 @@ window.onload = function() {
             lineNumbers: true,
             styleActiveLine: true,
             matchBrackets: true,
-            indentWithTabs: true,
             scrollbarStyle: null,
             readOnly: true
         });

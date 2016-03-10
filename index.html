@@ -80,7 +80,7 @@
 
             <ol>
                 <li>
-                    Test tiny portions of your program often. You should not begin testing your program after
+                    Test tiny portions of your program often. You should <b>not</b> begin testing your program after
                     you finish writing it. Testing should take place with each few lines that you write just to
                     make sure it’s doing what you expect.
                 </li>
@@ -96,7 +96,8 @@
             <div class="section_header">Syntax errors</div>
             <p>
                 Okay let’s try some debugging now. Syntax errors are definitely the easiest, since there are only a few
-                you’ll regularly encounter, so we’ll start there. Using the reference, try fixing this broken program:
+                you’ll regularly encounter. We’ll start there. Generally speaking, syntax errors occur when the
+                program is formatted incorrectly in some way. Using the reference, try fixing this broken program:
             </p>
             <textarea class="coding_area"></textarea>
             <textarea class="output_area"></textarea>
@@ -126,14 +127,76 @@
                 <div class="run_program coding_button" program="1">run</div>
             </div>
             <p>
-                Woah! The line number was wrong! <br>
+                Woah! The line number was wrong!<br>
                 <br>
                 Kind of.<br>
                 <br>
                 While the extra parenthesis was on line 20, the error message gave us line 22, because that’s the first
-                line to contain something other than what was expected. It turns out Python is pretty cool with line
+                line to contain something other than what was expected. It turns out Python is pretty chill about line
                 breaks in certain places. The line number in the error message got us to the right place, but keep in
                 mind that the fix may have to take place elsewhere.
+            </p>
+        </div>
+        <div class="section interactive">
+            <div class="section_header">Runtime errors</div>
+            <p>
+                Runtime errors are a little bit trickier due to the sheer number of them that you can encounter.
+                A runtime error occurs when your program is formatted correctly, but has a problem when it executes.
+                Here are come common causes of runtime errors:
+            </p>
+            <ol>
+                <li>A variable was accessed that hasn’t been initiated</li>
+                <li>A compound data type was indexed into a nonexistent position</li>
+                <li>The incorrect number of parameters were used when calling a function</li>
+                <li>A variable is used in the wrong context (e.g – as a string when it represents an int)</li>
+                <li>An immutable datatype was treated like a mutable datatype </li>
+            </ol>
+            <p>
+                Let's jump right into some examples! Check this one out:
+            </p>
+            <textarea class="coding_area"></textarea>
+            <textarea class="output_area"></textarea>
+            <div class="coding_buttons">
+                <div class="reveal_solution coding_button" program="2">reveal solution</div>
+                <div class="reset_program coding_button" program="2">reset</div>
+                <div class="run_program coding_button" program="2">run</div>
+            </div>
+            <p>
+                You’ll notice the error message here was actually pretty helpful. With most runtime errors, Python
+                usually has a little bit more information for you as far as what caused the problem.
+            </p>
+            <p>
+                Here’s another example of a runtime error:
+            </p>
+            <textarea class="coding_area"></textarea>
+            <textarea class="output_area"></textarea>
+            <div class="coding_buttons">
+                <div class="reveal_solution coding_button" program="3">reveal solution</div>
+                <div class="reset_program coding_button" program="3">reset</div>
+                <div class="run_program coding_button" program="3">run</div>
+            </div>
+            <p>
+                Ah curveball! Here we had two issues at once. First, we were indexing into a string at a nonexistent
+                position. Secondly, even if that worked, you can’t change the value of a string! You can only make a
+                new string and store it in the same place. Both of these issues are very common runtime errors.
+            </p>
+            <p>
+                Now for one more:
+            </p>
+            <textarea class="coding_area"></textarea>
+            <textarea class="output_area"></textarea>
+            <div class="coding_buttons">
+                <div class="reveal_solution coding_button" program="4">reveal solution</div>
+                <div class="reset_program coding_button" program="4">reset</div>
+                <div class="run_program coding_button" program="4">run</div>
+            </div>
+            <p>
+                Here we tried to take a string and combine it with an integer. Although this might make perfect sense
+                to us, Python wasn’t sure what to do – should it result in a string or an int? In other words, Python
+                has no way of knowing whether we wanted to add the string representation of the integer to the end of
+                the string or if we wanted to add the integer value of the string to the integer. We received an error
+                because of this ambiguity. Simply specifying a cast for one of the elements is enough to make it clear
+                which we prefer.
             </p>
         </div>
     </div>
