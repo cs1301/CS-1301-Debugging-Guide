@@ -83,14 +83,22 @@ a {
     body {
         background: #fff;
         color: #000;
+        font-size: 12px;
     }
 
-    .header {
-        margin-top: 0;
+    #header {
+        margin: 0;
+        font-size: 14px;
+    }
+
+    .section_header {
+        font-size: 16px;
+        margin-left: 20px;
     }
 
     .section {
-        border: 1px solid #000;
+        border: none;
+        padding: 5px;
     }
 
     .interactive {
