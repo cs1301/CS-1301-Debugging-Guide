@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="style/lesser-dark.css"/>
     <link rel="stylesheet" href="style/codemirror.css"/>
     <script src="lib/codemirror.js"></script>
-    <script src="lib/javascript.js"></script>
     <script src="lib/python.js"></script>
     <script src="lib/skulpt.min.js"></script>
     <script src="lib/skulpt-stdlib.js"></script>
@@ -56,9 +55,9 @@
                 Just seeing that there is red text is not enough. You need to look at what the red text says! There’s
                 always some helpful information in there if you know how to find it. For one, the error message should
                 be able to tell you what line the problem occurred. Keep in mind that sometimes you can encounter an
-                error on one line which was caused on another line (this is especially possible for runtime errors).
-                This means you may want to investigate the surrounding lines as well. In any case, having the line
-                number can really narrow down your search for the error.
+                error on one line which was caused on another line. This means you may want to investigate the
+                surrounding lines as well. In any case, having the line number can really narrow down your search for
+                the error.
             </p>
             <p>
                 Secondly, the error message will be able to tell you what it thinks went wrong. Check out the error
@@ -114,7 +113,10 @@
                 of taking the time to understand them on a case by case basis.
             </p>
             <p>
-                Let's try this one:
+                <p>
+                    Now let’s step it up a little. Here’s a really convoluted program that could really use some
+                    optimization. See if you can find the syntax error by using the error message:
+                </p>
             </p>
             <textarea class="coding_area"></textarea>
             <textarea class="output_area"></textarea>
@@ -123,6 +125,16 @@
                 <div class="reset_program coding_button" program="1">reset</div>
                 <div class="run_program coding_button" program="1">run</div>
             </div>
+            <p>
+                Woah! The line number was wrong! <br>
+                <br>
+                Kind of.<br>
+                <br>
+                While the extra parenthesis was on line 20, the error message gave us line 22, because that’s the first
+                line to contain something other than what was expected. It turns out Python is pretty cool with line
+                breaks in certain places. The line number in the error message got us to the right place, but keep in
+                mind that the fix may have to take place elsewhere.
+            </p>
         </div>
     </div>
 </body>
