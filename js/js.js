@@ -95,7 +95,7 @@ function resize_handler() {
         document.body.appendChild(pseudo_div);
         pseudo_div.innerHTML = sections[i].innerHTML;
         pseudo_div.className = "section";
-        pseudo_div.setAttribute("style", "opacity: 0");
+        pseudo_div.setAttribute("style", "opacity: 0; max-width: 1000px;");
 
         sections[i].setAttribute("height", "" + pseudo_div.clientHeight);
         var collapsed = sections[i].getAttribute("collapsed") == "true";
