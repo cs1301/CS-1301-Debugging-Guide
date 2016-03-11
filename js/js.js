@@ -50,6 +50,14 @@ window.onload = function() {
             update_program(index, code_input_instances, "solution");
         });
     }
+
+    var hint_buttons = document.getElementsByClassName("hint");
+    for (i = 0; i < hint_buttons.length; i++) {
+        hint_buttons[i].addEventListener("click", function(e) {
+            var index = parseInt(e.target.getAttribute("program"));
+            update_program(index, code_input_instances, "hint");
+        });
+    }
 };
 
 function execute_program(input, output) {
