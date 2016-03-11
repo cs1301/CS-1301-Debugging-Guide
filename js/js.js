@@ -59,8 +59,12 @@ window.onload = function() {
         });
     }
 
+    var sections = document.getElementsByClassName("section");
+    for (i = 0; i < sections.length; i++) {
+        sections[i].className += " hidden";
+    }
+
     setTimeout(function() {
-        var sections = document.getElementsByClassName("section");
         for (i = 0; i < sections.length; i++) {
             sections[i].setAttribute("height", "" + sections[i].clientHeight);
             sections[i].setAttribute("style", "height: 90px;");
@@ -69,7 +73,7 @@ window.onload = function() {
 
         setTimeout(function() {
             for (i = 0; i < sections.length; i++) {
-                sections[i].className += " transition";
+                sections[i].className = "section transition";
             }
         }, 100);
     }, 100);

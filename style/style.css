@@ -85,6 +85,10 @@ a {
     transition: 0.5s;
 }
 
+.hidden {
+    opacity: 0;
+}
+
 @media print {
     body {
         background: #fff;
