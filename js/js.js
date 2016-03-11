@@ -88,6 +88,34 @@ window.onload = function() {
     }
 };
 
+function resize_handler() {
+    var sections = document.getElementsByClassName("section");
+    for (var i = 0; i < sections.length; i++) {
+        var pseudo_div = document.createElement("div");
+        document.body.appendChild(pseudo_div);
+        pseudo_div.innerHTML = sections[i].innerHTML;
+        pseudo_div.className = "section";
+        pseudo_div.setAttribute("style", "opacity: 0");
+
+        sections[i].setAttribute("height", "" + pseudo_div.clientHeight);
+        var collapsed = sections[i].getAttribute("collapsed") == "true";
+        if (!collapsed) {
+            sections[i].setAttribute("style", "height: " + pseudo_div.clientHeight + "px;");
+        }
+
+        document.body.removeChild(pseudo_div);
+    }
+}
+
+var resize_handler_timer = null;
+window.addEventListener("resize", function() {
+    if (resize_handler_timer != null) {
+        clearTimeout(resize_handler_timer);
+    }
+
+    resize_handler_timer = setTimeout(resize_handler, 500);
+});
+
 function execute_program(input, output) {
     output.setValue("");
     Sk.pre = "output";
