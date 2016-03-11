@@ -23,7 +23,7 @@ window.onload = function() {
             scrollbarStyle: null,
             readOnly: true
         });
-        code_output_instances[i].setOption("theme", "lesser-dark");
+        code_output_instances[i].setOption("theme", "output");
         code_output_instances[i].setSize(-1, 100);
     }
 

@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style/style.css"/>
     <link rel="stylesheet" href="style/aktiv_grotesk.css"/>
     <link rel="stylesheet" href="style/lesser-dark.css"/>
+    <link rel="stylesheet" href="style/output.css"/>
     <link rel="stylesheet" href="style/codemirror.css"/>
     <script src="lib/codemirror.js"></script>
     <script src="lib/python.js"></script>
@@ -93,7 +94,7 @@
             </ol>
         </div>
         <div class="section interactive">
-            <div class="section_header">Syntax errors</div>
+            <div class="section_header page_break">Syntax errors</div>
             <p>
                 Okay let’s try some debugging now. Syntax errors are definitely the easiest, since there are only a few
                 you’ll regularly encounter. We’ll start there. Generally speaking, syntax errors occur when the
@@ -136,7 +137,7 @@
             </p>
         </div>
         <div class="section interactive">
-            <div class="section_header">
+            <div class="section_header page_break">
                 Runtime errors
             </div>
             <p>
@@ -200,7 +201,7 @@
             </p>
         </div>
         <div class="section">
-            <div class="section_header">
+            <div class="section_header page_break">
                 Semantic errors
             </div>
             <p>
@@ -219,6 +220,26 @@
                 <div class="reset_program coding_button" program="5">reset</div>
                 <div class="run_program coding_button" program="5">run</div>
             </div>
+            <p>
+                Not bad! It looks like the creator of the program might have just written the wrong variable name in
+                the return statement. The takeaway here is that not all semantic errors are indicative of a major
+                issue in your code. Sometimes it’s as simple as a typo in a return statement. Let’s take on a little
+                more complicated example:
+            </p>
+            <textarea class="coding_area" title=""></textarea>
+            <textarea class="output_area" title=""></textarea>
+            <div class="coding_buttons">
+                <div class="hint coding_button" program="6">hint</div>
+                <div class="reveal_solution coding_button" program="6">reveal solution</div>
+                <div class="reset_program coding_button" program="6">reset</div>
+                <div class="run_program coding_button" program="6">run</div>
+            </div>
+            <p>
+                This problem looks a little more complicated than a typo. In fact, it could be the result of the
+                programmer not fully understanding how Python works. Indeed, in some languages this logic would work,
+                but not in Python! Sometimes taking the time to understand how Python treats certain situations (like
+                the scope of parameters) can go a long way in helping resolve semantic errors.
+            </p>
         </div>
     </div>
 </body>

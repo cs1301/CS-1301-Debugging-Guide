@@ -93,7 +93,14 @@ a {
 
     .section_header {
         font-size: 16px;
-        margin-left: 20px;
+        border-bottom: 1px solid #000;
+        box-sizing: border-box;
+        padding-left: 10px;
+        padding-bottom: 10px;
+    }
+
+    .page_break {
+        page-break-before: always;
     }
 
     .section {
@@ -101,7 +108,17 @@ a {
         padding: 5px;
     }
 
-    .interactive {
-        display: none;
+    .coding_button,
+    .output_area,
+    .cm-s-output {
+        display: None;
+    }
+
+    .cm-s-lesser-dark {
+        height: auto !important;
+    }
+
+    * {
+        text-shadow: None !important;
     }
 }
