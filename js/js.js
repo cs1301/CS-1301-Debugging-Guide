@@ -59,17 +59,19 @@ window.onload = function() {
         });
     }
 
-    var sections = document.getElementsByClassName("section");
-    for (i = 0; i < sections.length; i++) {
-        sections[i].setAttribute("height", "" + sections[i].clientHeight);
-        sections[i].setAttribute("style", "height: 90px;");
-        sections[i].setAttribute("collapsed", "true");
-    }
-
     setTimeout(function() {
+        var sections = document.getElementsByClassName("section");
         for (i = 0; i < sections.length; i++) {
-            sections[i].className += " transition";
+            sections[i].setAttribute("height", "" + sections[i].clientHeight);
+            sections[i].setAttribute("style", "height: 90px;");
+            sections[i].setAttribute("collapsed", "true");
         }
+
+        setTimeout(function() {
+            for (i = 0; i < sections.length; i++) {
+                sections[i].className += " transition";
+            }
+        }, 100);
     }, 100);
 
     var section_headers = document.getElementsByClassName("section_header");
