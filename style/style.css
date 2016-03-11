@@ -24,6 +24,8 @@ a {
     margin-top: 10px;
     margin-bottom: 10px;
     text-align: justify;
+    overflow: hidden;
+    transition: 0.5s;
 }
 
 #header {
@@ -36,8 +38,9 @@ a {
 
 .section_header {
     font-size: 25px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     color: #669199;
+    cursor: pointer;
 }
 
 .subscript {

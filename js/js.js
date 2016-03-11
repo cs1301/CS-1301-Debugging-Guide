@@ -58,6 +58,26 @@ window.onload = function() {
             update_program(index, code_input_instances, "hint");
         });
     }
+
+    var sections = document.getElementsByClassName("section");
+    for (i = 0; i < sections.length; i++) {
+        sections[i].setAttribute("height", "" + sections[i].clientHeight);
+        sections[i].setAttribute("style", "height: 90px;");
+        sections[i].setAttribute("collapsed", "true");
+    }
+
+    var section_headers = document.getElementsByClassName("section_header");
+    for (i = 0; i < section_headers.length; i++) {
+        section_headers[i].addEventListener("click", function(e) {
+            var parent = e.target.parentNode;
+            var collapsed = parent.getAttribute("collapsed") == "true";
+            var height = collapsed ? parent.getAttribute("height") : 90;
+            
+            parent.setAttribute("style", "height: " + height + "px;");
+            collapsed = collapsed ? "false" : "true";
+            parent.setAttribute("collapsed", "" + collapsed);
+        });
+    }
 };
 
 function execute_program(input, output) {
