@@ -66,13 +66,19 @@ window.onload = function() {
         sections[i].setAttribute("collapsed", "true");
     }
 
+    setTimeout(function() {
+        for (i = 0; i < sections.length; i++) {
+            sections[i].className += " transition";
+        }
+    }, 100);
+
     var section_headers = document.getElementsByClassName("section_header");
     for (i = 0; i < section_headers.length; i++) {
         section_headers[i].addEventListener("click", function(e) {
             var parent = e.target.parentNode;
             var collapsed = parent.getAttribute("collapsed") == "true";
             var height = collapsed ? parent.getAttribute("height") : 90;
-            
+
             parent.setAttribute("style", "height: " + height + "px;");
             collapsed = collapsed ? "false" : "true";
             parent.setAttribute("collapsed", "" + collapsed);

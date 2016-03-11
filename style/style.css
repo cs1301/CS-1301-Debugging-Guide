@@ -25,7 +25,6 @@ a {
     margin-bottom: 10px;
     text-align: justify;
     overflow: hidden;
-    transition: 0.5s;
 }
 
 #header {
@@ -80,6 +79,10 @@ a {
     border: 1px solid #0a0;
     margin-bottom: 5px;
     margin-left: auto;
+}
+
+.transition {
+    transition: 0.5s;
 }
 
 @media print {
