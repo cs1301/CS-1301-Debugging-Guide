@@ -3,6 +3,8 @@ body {
     background: #333;
     color: #ccc;
     font-family: AktivGroteskStd, sans-serif;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 a {
@@ -116,6 +118,7 @@ a {
     .section {
         border: none;
         padding: 5px;
+        height: auto !important;
     }
 
     .coding_button,
