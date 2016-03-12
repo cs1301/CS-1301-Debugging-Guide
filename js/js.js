@@ -1,6 +1,7 @@
 window.onload = function() {
     var code_input_instances = [];
     var code_output_instances = [];
+    var code_example_instances = [];
 
     var coding_areas = document.getElementsByClassName("coding_area");
     for (var i = 0; i < coding_areas.length; i++) {
@@ -25,6 +26,21 @@ window.onload = function() {
         });
         code_output_instances[i].setOption("theme", "output");
         code_output_instances[i].setSize(-1, 100);
+    }
+
+    var example_areas = document.getElementsByClassName("example_area");
+    for (i = 0; i < example_areas.length; i++) {
+        code_example_instances[i] = CodeMirror.fromTextArea(example_areas[i], {
+            lineNumbers: true,
+            styleActiveLine: true,
+            matchBrackets: true,
+            scrollbarStyle: null,
+            readOnly: true
+        });
+        code_example_instances[i].setOption("theme", "lesser-dark");
+
+        var filename = example_areas[i].getAttribute("filename") + "_example.py";
+        update_program(i, code_example_instances, "example", filename);
     }
 
     var run_buttons = document.getElementsByClassName("run_program");
@@ -90,6 +106,24 @@ window.onload = function() {
             parent.setAttribute("collapsed", "" + collapsed);
         });
     }
+
+    document.getElementById("exceptions_reference_filter").addEventListener("keyup", function(e) {
+        var rows = document.getElementById("exceptions_reference").childNodes[1].childNodes;
+        var search_string = e.target.value;
+
+        for (var i = 1; i < rows.length; i++) {
+            console.log(rows[i].tagName);
+            if (rows[i].tagName != "TR") continue;
+
+            if (rows[i].childNodes[1].innerHTML.search(search_string) != -1) {
+                rows[i].setAttribute("style", "");
+            } else {
+                rows[i].setAttribute("style", "display: none");
+            }
+        }
+
+        resize_handler();
+    });
 };
 
 function resize_handler() {
@@ -137,13 +171,17 @@ function execute_program(input, output) {
         });
 }
 
-function update_program(index, code_input_instances, type) {
+function update_program(index, code_input_instances, type, filename) {
+    if (filename == undefined) {
+        filename = index + "_" + type + ".py";
+    }
+
     var req = new XMLHttpRequest();
     req.onreadystatechange = function() {
         if (req.readyState == 4 && req.status == 200) {
             code_input_instances[index].setValue(req.responseText);
         }
     };
-    req.open("GET", "python_files/" + index + "_" + type + ".py", true);
+    req.open("GET", "python_files/" + filename, true);
     req.send();
 }

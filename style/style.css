@@ -91,6 +91,61 @@ a {
     opacity: 0;
 }
 
+#exceptions_reference_filter {
+    display: block;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 20px;
+    background: #333;
+    border: 1px solid #aaa;
+    font-size: 14px;
+    color: #fff;
+    font-family: monospace;
+}
+
+#exceptions_reference {
+    width: 100%;
+}
+
+#exceptions_reference td {
+    padding: 10px;
+    vertical-align: top;
+}
+
+#exceptions_reference tr:nth-child(odd) {
+    background: #3a3a3a;
+}
+
+#exceptions_reference tr:nth-child(even) {
+    background: #333;
+}
+
+#exceptions_reference tr td:nth-child(1) {
+    min-width: 125px;
+    font-family: monospace;
+}
+
+#exceptions_reference tr td:nth-child(3) {
+    min-width: 150px;
+    max-width: 330px;
+    padding: 0;
+}
+
+.exceptions_reference_header {
+    background: #666;
+    color: #000;
+    font-family: AktivGroteskStd, sans-serif !important;
+    vertical-align: middle !important;
+    padding: 10px !important;
+}
+
+@media screen and (max-width: 800px) {
+    #exceptions_reference tr td:nth-child(3) {
+        display: none;
+    }
+}
+
 @media print {
     body {
         background: #fff;
