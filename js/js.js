@@ -109,13 +109,13 @@ window.onload = function() {
 
     document.getElementById("exceptions_reference_filter").addEventListener("keyup", function(e) {
         var rows = document.getElementById("exceptions_reference").childNodes[1].childNodes;
-        var search_string = e.target.value;
+        var search_string = e.target.value.toLowerCase();
 
         for (var i = 1; i < rows.length; i++) {
             console.log(rows[i].tagName);
             if (rows[i].tagName != "TR") continue;
 
-            if (rows[i].childNodes[1].innerHTML.search(search_string) != -1) {
+            if (rows[i].childNodes[1].innerHTML.toLowerCase().search(search_string) != -1) {
                 rows[i].setAttribute("style", "");
             } else {
                 rows[i].setAttribute("style", "display: none");
