@@ -226,7 +226,8 @@ a {
 
     .coding_button,
     .output_area,
-    .cm-s-output {
+    .cm-s-output,
+    #exceptions_reference_filter {
         display: None;
     }
 
@@ -236,5 +237,14 @@ a {
 
     * {
         text-shadow: None !important;
+    }
+
+    #exceptions_reference tr td {
+        border: 1px solid #aaa !important;
+    }
+
+    table {
+        border-spacing: 0;
+        border-collapse: separate;
     }
 }
