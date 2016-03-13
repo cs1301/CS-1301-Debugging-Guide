@@ -7,7 +7,7 @@ a = [1, 2, 3]
 for i in range(4):
     print(a[i])
 
-#example 3 (bad index offset):
+# example 3 (bad index offset):
 a = [1, 2, 3]
 for i in range(len(a)):
     print(a[i + 1])

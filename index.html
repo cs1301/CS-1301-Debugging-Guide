@@ -273,6 +273,30 @@
                 </tr>
                 <tr>
                     <td>
+                        AttributeError
+                    </td>
+                    <td>
+                        The attribute you are accessing does not exist.
+                    </td>
+                    <td>
+                        <textarea class="example_area" title="" filename="attribute_error"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        ImportError
+                    </td>
+                    <td>
+                        An import statement is attempting to import a nonexistent module. Check the capitalization of
+                        the module. Also make sure that the module you are importing is correct for your version of
+                        Python. Sometimes module names change from version to version.
+                    </td>
+                    <td>
+                        <textarea class="example_area" title="" filename="import_error"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
                         IndexError
                     </td>
                     <td>
@@ -282,6 +306,94 @@
                     </td>
                     <td>
                         <textarea class="example_area" title="" filename="index_error"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        KeyError
+                    </td>
+                    <td>
+                        The key you are accessing in a dictionary does not exist.
+                    </td>
+                    <td>
+                        <textarea class="example_area" title="" filename="key_error"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        NameError
+                    </td>
+                    <td>
+                        You are accessing a variable that does not exist. The error message should tell you the name of
+                        the variable that does not have a value.
+                    </td>
+                    <td>
+                        <textarea class="example_area" title="" filename="name_error"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        RuntimeError
+                    </td>
+                    <td>
+                        This error does not correspond to any one scenario – it’s more of a general catch all for weird
+                        situations. Check the error message to figure out exactly what happened. One example of a
+                        runtime error is when you have a recursive function that never ends.
+                    </td>
+                    <td>
+                        <textarea class="example_area" title="" filename="runtime_error"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        SyntaxError
+                    </td>
+                    <td>
+                        This is exception is raised any time your syntax does not represent a valid Python program.
+                        Check the syntax errors practice for tips on finding and removing syntax errors.
+                    </td>
+                    <td>
+                        <textarea class="example_area" title="" filename="syntax_error"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        TabError
+                    </td>
+                    <td>
+                        This rather annoying exception is raised when your program uses both tabs and spaces to
+                        represent indentation. Some programs will default to inserting a specific number of spaces
+                        when you press the tab key while others use the tab character (represented in a string like:
+                        "\t"). When you use multiple programs to edit your code (or copy/paste between different
+                        programs) you can sometimes get a mismatch. To fix this, try re-indenting the offending line(s)
+                        with the same program that the rest of the code was written in.
+                    </td>
+                    <td>
+                        <textarea class="example_area" title="" filename="tab_error"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        TypeError
+                    </td>
+                    <td>
+                        There are a number of situations that can cause this, but the general idea is that you are
+                        using the value of a variable in a way that it cannot be used. This can be anything from
+                        concatenating a string with an integer, to trying to change a value in an immutable datatype.
+                    </td>
+                    <td>
+                        <textarea class="example_area" title="" filename="type_error"></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        ZeroDivisionError
+                    </td>
+                    <td>
+                        You're dividing a number by zero.
+                    </td>
+                    <td>
+                        <textarea class="example_area" title="" filename="zero_division_error"></textarea>
                     </td>
                 </tr>
             </table>
