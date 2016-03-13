@@ -158,6 +158,10 @@ a {
     #exceptions_reference tr td:nth-child(3) {
         display: none;
     }
+
+    #search_icon {
+        display: none;
+    }
 }
 
 @media print {
