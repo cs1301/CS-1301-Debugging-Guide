@@ -155,12 +155,35 @@ a {
 }
 
 @media screen and (max-width: 800px) {
+    body {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    #header {
+        margin-right: 10px;
+    }
+
     #exceptions_reference tr td:nth-child(3) {
         display: none;
     }
 
     #search_icon {
         display: none;
+    }
+
+    .section {
+        border: none;
+        border-top: 1px solid #aaa;
+        border-bottom: 1px solid #aaa;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    #exceptions_reference tr td:nth-child(1) {
+        max-width: 100px;
+        font-family: monospace;
+        overflow: scroll;
     }
 }
 
