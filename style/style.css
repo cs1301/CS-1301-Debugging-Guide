@@ -176,8 +176,8 @@ a {
         border: none;
         border-top: 1px solid #aaa;
         border-bottom: 1px solid #aaa;
-        padding-left: 5px;
-        padding-right: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
     #exceptions_reference tr td:nth-child(1) {
