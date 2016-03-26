@@ -9,7 +9,8 @@ window.onload = function() {
             lineNumbers: true,
             styleActiveLine: true,
             matchBrackets: true,
-            scrollbarStyle: null
+            scrollbarStyle: null,
+            lineWrapping: true
         });
         code_input_instances[i].setOption("theme", "lesser-dark");
         update_program(i, code_input_instances, "problem");
@@ -22,7 +23,8 @@ window.onload = function() {
             styleActiveLine: true,
             matchBrackets: true,
             scrollbarStyle: null,
-            readOnly: true
+            readOnly: true,
+            lineWrapping: true
         });
         code_output_instances[i].setOption("theme", "output");
         code_output_instances[i].setSize(-1, 100);
@@ -35,7 +37,8 @@ window.onload = function() {
             styleActiveLine: true,
             matchBrackets: true,
             scrollbarStyle: null,
-            readOnly: true
+            readOnly: true,
+            lineWrapping: true
         });
         code_example_instances[i].setOption("theme", "lesser-dark");
 
@@ -112,7 +115,6 @@ window.onload = function() {
         var search_string = e.target.value.toLowerCase();
 
         for (var i = 1; i < rows.length; i++) {
-            console.log(rows[i].tagName);
             if (rows[i].tagName != "TR") continue;
 
             if (rows[i].childNodes[1].innerHTML.toLowerCase().search(search_string) != -1) {
