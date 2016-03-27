@@ -1,7 +1,8 @@
 var resize_timer;
+var code_input_instances;
 
 window.onload = function() {
-    var code_input_instances = [];
+    code_input_instances = [];
     var code_output_instances = [];
     var code_example_instances = [];
 
@@ -76,7 +77,9 @@ window.onload = function() {
     for (i = 0; i < solution_buttons.length; i++) {
         solution_buttons[i].addEventListener("click", function(e) {
             var index = parseInt(e.target.getAttribute("program"));
-            update_program(index, code_input_instances, "solution");
+            update_program(index, code_input_instances, "solution", undefined, function() {
+                highlight_lines(code_input_instances[index], e.target.getAttribute("highlight"));
+            });
         });
     }
 
@@ -84,7 +87,9 @@ window.onload = function() {
     for (i = 0; i < hint_buttons.length; i++) {
         hint_buttons[i].addEventListener("click", function(e) {
             var index = parseInt(e.target.getAttribute("program"));
-            update_program(index, code_input_instances, "hint");
+            update_program(index, code_input_instances, "hint", undefined, function() {
+                highlight_lines(code_input_instances[index], e.target.getAttribute("highlight"));
+            });
         });
     }
 
@@ -183,7 +188,7 @@ function execute_program(input, output) {
         });
 }
 
-function update_program(index, code_input_instances, type, filename) {
+function update_program(index, code_input_instances, type, filename, callback) {
     if (filename == undefined) {
         filename = index + "_" + type + ".py";
     }
@@ -192,8 +197,23 @@ function update_program(index, code_input_instances, type, filename) {
     req.onreadystatechange = function() {
         if (req.readyState == 4 && req.status == 200) {
             code_input_instances[index].setValue(req.responseText);
+
+            if (callback != undefined) {
+                callback();
+            }
         }
     };
     req.open("GET", "python_files/" + filename, true);
     req.send();
+}
+
+function highlight_lines(editor, lines_string) {
+    if (lines_string == null || lines_string == "") return;
+
+    var line_numbers = lines_string.split(",");
+    var lines = editor.doc.children[0].lines;
+
+    for (var i = 0; i < line_numbers.length; i++) {
+        editor.addLineClass(lines[parseInt(line_numbers[i]) - 1], 'wrap', 'CodeMirror-activeline-background');
+    }
 }
