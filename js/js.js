@@ -1,3 +1,5 @@
+var resize_timer;
+
 window.onload = function() {
     var code_input_instances = [];
     var code_output_instances = [];
@@ -13,6 +15,14 @@ window.onload = function() {
             lineWrapping: true
         });
         code_input_instances[i].setOption("theme", "lesser-dark");
+
+        code_input_instances[i].on("change", function() {
+            if (resize_timer != undefined) {
+                clearTimeout(resize_timer);
+            }
+
+            resize_timer = setTimeout(resize_handler, 200);
+        });
         update_program(i, code_input_instances, "problem");
     }
 
